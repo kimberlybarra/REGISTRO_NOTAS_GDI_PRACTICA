@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2025 a las 20:53:32
+-- Tiempo de generación: 21-11-2025 a las 21:17:48
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -217,6 +217,28 @@ CREATE TABLE `evaluacion_detalle` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `examen`
+--
+
+CREATE TABLE `examen` (
+  `codigo_examen` int(6) NOT NULL,
+  `codigo_curso` int(6) DEFAULT NULL,
+  `tipo_examen` enum('BIMESTRAL','RECUPERACIÓN','SUSTITUTORIO') DEFAULT 'BIMESTRAL',
+  `fecha` date DEFAULT NULL,
+  `descripcion` varchar(200) DEFAULT NULL,
+  `peso` decimal(3,2) DEFAULT 0.30
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `examen`
+--
+
+INSERT INTO `examen` (`codigo_examen`, `codigo_curso`, `tipo_examen`, `fecha`, `descripcion`, `peso`) VALUES
+(4001, 1001, 'BIMESTRAL', '2025-11-14', 'Examen bimestre 1 - Fracciones', 9.99);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `gradoseccion`
 --
 
@@ -270,6 +292,71 @@ CREATE TABLE `notas` (
   `observaciones` varchar(200) DEFAULT NULL,
   `nota_final` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `notas`
+--
+
+INSERT INTO `notas` (`DNIestudiante`, `codigo_sesion`, `observaciones`, `nota_final`) VALUES
+('29032045', 2001, '', 'A'),
+('29271304', 2001, '', 'AD'),
+('29297151', 2001, '', 'AD'),
+('29341382', 2001, '', 'AD'),
+('29447469', 2001, '', 'C'),
+('29530668', 2001, '', 'B'),
+('29591002', 2001, '', 'B'),
+('29606969', 2001, '', 'C'),
+('29950812', 2001, '', ''),
+('30191114', 2001, '', 'AD'),
+('30342696', 2001, '', 'A'),
+('30419565', 2001, '', 'A'),
+('30472809', 2001, 'irresponsable', 'AD'),
+('30499695', 2001, '', 'B'),
+('30500956', 2001, '', 'AD'),
+('30766614', 2001, '', 'AD'),
+('30772679', 2001, '', 'A'),
+('30832267', 2001, '', 'AD'),
+('32246360', 2001, '', 'A'),
+('32272381', 2001, '', 'A');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notas_examen`
+--
+
+CREATE TABLE `notas_examen` (
+  `DNIestudiante` varchar(8) NOT NULL,
+  `codigo_examen` int(6) NOT NULL,
+  `nota_final` varchar(2) DEFAULT NULL,
+  `observaciones` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `notas_examen`
+--
+
+INSERT INTO `notas_examen` (`DNIestudiante`, `codigo_examen`, `nota_final`, `observaciones`) VALUES
+('29032045', 4001, 'C', ''),
+('29271304', 4001, 'B', ''),
+('29297151', 4001, 'B', ''),
+('29341382', 4001, 'AD', ''),
+('29447469', 4001, 'A', ''),
+('29530668', 4001, 'AD', ''),
+('29591002', 4001, 'C', ''),
+('29606969', 4001, 'A', ''),
+('29950812', 4001, 'A', ''),
+('30191114', 4001, 'AD', ''),
+('30342696', 4001, 'A', ''),
+('30419565', 4001, 'AD', ''),
+('30472809', 4001, 'AD', ''),
+('30499695', 4001, 'A', ''),
+('30500956', 4001, 'AD', ''),
+('30766614', 4001, 'A', ''),
+('30772679', 4001, 'C', ''),
+('30832267', 4001, 'A', ''),
+('32246360', 4001, 'B', ''),
+('32272381', 4001, 'B', '');
 
 -- --------------------------------------------------------
 
@@ -386,6 +473,13 @@ ALTER TABLE `evaluacion_detalle`
   ADD KEY `id_criterio` (`id_criterio`);
 
 --
+-- Indices de la tabla `examen`
+--
+ALTER TABLE `examen`
+  ADD PRIMARY KEY (`codigo_examen`),
+  ADD KEY `codigo_curso` (`codigo_curso`);
+
+--
 -- Indices de la tabla `gradoseccion`
 --
 ALTER TABLE `gradoseccion`
@@ -405,6 +499,13 @@ ALTER TABLE `lista_de_cotejo`
 ALTER TABLE `notas`
   ADD PRIMARY KEY (`DNIestudiante`,`codigo_sesion`),
   ADD KEY `codigo_sesion` (`codigo_sesion`);
+
+--
+-- Indices de la tabla `notas_examen`
+--
+ALTER TABLE `notas_examen`
+  ADD PRIMARY KEY (`DNIestudiante`,`codigo_examen`),
+  ADD KEY `codigo_examen` (`codigo_examen`);
 
 --
 -- Indices de la tabla `password_resets`
@@ -504,6 +605,12 @@ ALTER TABLE `evaluacion_detalle`
   ADD CONSTRAINT `evaluacion_detalle_ibfk_3` FOREIGN KEY (`id_criterio`) REFERENCES `criterio` (`id_criterio`);
 
 --
+-- Filtros para la tabla `examen`
+--
+ALTER TABLE `examen`
+  ADD CONSTRAINT `examen_ibfk_1` FOREIGN KEY (`codigo_curso`) REFERENCES `curso` (`codigo_curso`);
+
+--
 -- Filtros para la tabla `lista_de_cotejo`
 --
 ALTER TABLE `lista_de_cotejo`
@@ -516,6 +623,13 @@ ALTER TABLE `lista_de_cotejo`
 ALTER TABLE `notas`
   ADD CONSTRAINT `notas_ibfk_1` FOREIGN KEY (`DNIestudiante`) REFERENCES `estudiante` (`DNIestudiante`),
   ADD CONSTRAINT `notas_ibfk_2` FOREIGN KEY (`codigo_sesion`) REFERENCES `sesion_de_aprendizaje` (`codigo_sesion`);
+
+--
+-- Filtros para la tabla `notas_examen`
+--
+ALTER TABLE `notas_examen`
+  ADD CONSTRAINT `notas_examen_ibfk_1` FOREIGN KEY (`DNIestudiante`) REFERENCES `estudiante` (`DNIestudiante`),
+  ADD CONSTRAINT `notas_examen_ibfk_2` FOREIGN KEY (`codigo_examen`) REFERENCES `examen` (`codigo_examen`);
 
 --
 -- Filtros para la tabla `sesion_de_aprendizaje`
