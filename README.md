@@ -58,7 +58,7 @@ Permite a los docentes gestionar cursos, sesiones de aprendizaje, registrar nota
 ---
 
 ## 📄 Licencia
-Este proyecto es de uso institucional para IE Virgen de Fátima.
+Este proyecto es de uso institucional.
 
 ---
 
