@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<< HEAD:RegistroNotas V2.5/RegistroNotas V2.5/db/registronotasdb.sql
 -- Tiempo de generación: 27-11-2025 a las 04:32:15
+=======
+-- Tiempo de generación: 21-11-2025 a las 21:17:48
+>>>>>>> 7c154c0b9c851e4276ae110ed987b929b3598898:REGISTRO_NOTAS_GDI_PRACTICA/REGISTRO_NOTAS_GDI_PRACTICA/db/registronotasdb.sql
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -201,9 +205,22 @@ CREATE TABLE `examen` (
   `tipo_examen` enum('BIMESTRAL','RECUPERACIÓN','SUSTITUTORIO') DEFAULT 'BIMESTRAL',
   `fecha` date DEFAULT NULL,
   `descripcion` varchar(200) DEFAULT NULL,
+<<<<<<< HEAD:RegistroNotas V2.5/RegistroNotas V2.5/db/registronotasdb.sql
   `peso` decimal(5,2) DEFAULT 0.30
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+=======
+  `peso` decimal(3,2) DEFAULT 0.30
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `examen`
+--
+
+INSERT INTO `examen` (`codigo_examen`, `codigo_curso`, `tipo_examen`, `fecha`, `descripcion`, `peso`) VALUES
+(4001, 1001, 'BIMESTRAL', '2025-11-14', 'Examen bimestre 1 - Fracciones', 9.99);
+
+>>>>>>> 7c154c0b9c851e4276ae110ed987b929b3598898:REGISTRO_NOTAS_GDI_PRACTICA/REGISTRO_NOTAS_GDI_PRACTICA/db/registronotasdb.sql
 -- --------------------------------------------------------
 
 --
@@ -260,6 +277,71 @@ CREATE TABLE `notas` (
   `observaciones` varchar(200) DEFAULT NULL,
   `nota_final` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `notas`
+--
+
+INSERT INTO `notas` (`DNIestudiante`, `codigo_sesion`, `observaciones`, `nota_final`) VALUES
+('29032045', 2001, '', 'A'),
+('29271304', 2001, '', 'AD'),
+('29297151', 2001, '', 'AD'),
+('29341382', 2001, '', 'AD'),
+('29447469', 2001, '', 'C'),
+('29530668', 2001, '', 'B'),
+('29591002', 2001, '', 'B'),
+('29606969', 2001, '', 'C'),
+('29950812', 2001, '', ''),
+('30191114', 2001, '', 'AD'),
+('30342696', 2001, '', 'A'),
+('30419565', 2001, '', 'A'),
+('30472809', 2001, 'irresponsable', 'AD'),
+('30499695', 2001, '', 'B'),
+('30500956', 2001, '', 'AD'),
+('30766614', 2001, '', 'AD'),
+('30772679', 2001, '', 'A'),
+('30832267', 2001, '', 'AD'),
+('32246360', 2001, '', 'A'),
+('32272381', 2001, '', 'A');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notas_examen`
+--
+
+CREATE TABLE `notas_examen` (
+  `DNIestudiante` varchar(8) NOT NULL,
+  `codigo_examen` int(6) NOT NULL,
+  `nota_final` varchar(2) DEFAULT NULL,
+  `observaciones` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `notas_examen`
+--
+
+INSERT INTO `notas_examen` (`DNIestudiante`, `codigo_examen`, `nota_final`, `observaciones`) VALUES
+('29032045', 4001, 'C', ''),
+('29271304', 4001, 'B', ''),
+('29297151', 4001, 'B', ''),
+('29341382', 4001, 'AD', ''),
+('29447469', 4001, 'A', ''),
+('29530668', 4001, 'AD', ''),
+('29591002', 4001, 'C', ''),
+('29606969', 4001, 'A', ''),
+('29950812', 4001, 'A', ''),
+('30191114', 4001, 'AD', ''),
+('30342696', 4001, 'A', ''),
+('30419565', 4001, 'AD', ''),
+('30472809', 4001, 'AD', ''),
+('30499695', 4001, 'A', ''),
+('30500956', 4001, 'AD', ''),
+('30766614', 4001, 'A', ''),
+('30772679', 4001, 'C', ''),
+('30832267', 4001, 'A', ''),
+('32246360', 4001, 'B', ''),
+('32272381', 4001, 'B', '');
 
 -- --------------------------------------------------------
 
