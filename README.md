@@ -1,7 +1,7 @@
 # 📘 Sistema de Registro de Notas - IE Virgen de Fátima
 
 ## 📋 Descripción
-Sistema web completo para la gestión académica de la Institución Educativa N.º 70541 **“Virgen de Fátima”**.  
+Sistema web completo para la gestión académica de las Instituciones Educativas.  
 Permite a los docentes gestionar cursos, sesiones de aprendizaje, registrar notas y generar reportes detallados de manera rápida y segura.
 
 ---
