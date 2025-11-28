@@ -167,7 +167,7 @@ if(isset($_GET['export']) && $_GET['export'] == 'excel' && $curso_seleccionado) 
     // Encabezado del Excel
     echo "<table>";
     echo "<tr><td colspan='" . (count($sesiones) + 4) . "' class='excel-header'>";
-    echo "<div class='excel-title'>INSTITUCIÓN EDUCATIVA N° 70541 'VIRGEN DE FÁTIMA'</div>";
+    echo "<div class='excel-title'>Institución Nacional'</div>";
     echo "<div class='excel-subtitle'>REPORTE DE NOTAS - SESIONES - " . strtoupper($curso_info['nombre']) . "</div>";
     echo "<div class='excel-subtitle'>Fecha de emisión: " . date('d/m/Y') . "</div>";
     echo "</td></tr>";
@@ -269,7 +269,7 @@ if(isset($_GET['export']) && $_GET['export'] == 'excel_completo' && $curso_selec
     // Encabezado del Excel
     echo "<table>";
     echo "<tr><td colspan='" . (count($sesiones) + count($examenes) + 5) . "' class='excel-header'>";
-    echo "<div class='excel-title'>INSTITUCIÓN EDUCATIVA N° 70541 'VIRGEN DE FÁTIMA'</div>";
+    echo "<div class='excel-title'>INSTITUCIÓN NACIONAL</div>";
     echo "<div class='excel-subtitle'>REPORTE COMPLETO DE NOTAS - " . strtoupper($curso_info['nombre']) . "</div>";
     echo "<div class='excel-subtitle'>Fecha de emisión: " . date('d/m/Y') . "</div>";
     echo "</td></tr>";
@@ -394,7 +394,7 @@ if(isset($_GET['export']) && $_GET['export'] == 'excel_completo' && $curso_selec
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportes - IE Virgen de Fátima</title>
+    <title>Reportes - Institución Nacional</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

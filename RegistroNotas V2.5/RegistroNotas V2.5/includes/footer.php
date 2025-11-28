@@ -3,7 +3,7 @@
         <div class="footer-section">
             <div class="footer-logo">
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjMzU3OEVGIj48cGF0aCBkPSJNMjU2IDBDMTE0LjYgMCAwIDExNC42IDAgMjU2czExNC42IDI1NiAyNTYgMjU2IDI1Ni0xMTQuNiAyNTYtMjU2UzM5Ny40IDAgMjU2IDB6bTAgNDQ4Yy0xMDUuOSAwLTE5Mi04Ni4xLTE5Mi0xOTJzODYuMS0xOTIgMTkyLTE5MiAxOTIgODYuMSAxOTIgMTkyLTg2LjEgMTkyLTE5MiAxOTJ6Ii8+PHBhdGggZD0iTTI1NiAxMjhjLTcwLjcgMC0xMjggNTcuMy0xMjggMTI4czU3LjMgMTI4IDEyOCAxMjggMTI4LTU3LjMgMTI4LTEyOC01Ny4zLTEyOC0xMjgtMTI4em0wIDE5MmMtMzUuMyAwLTY0LTI4LjctNjQtNjRzMjguNy02NCA2NC02NCA2NCAyOC43IDY0IDY0LTI4LjcgNjQtNjQgNjR6Ii8+PHBhdGggZD0iTTI1NiAzMjBjLTM1LjMgMC02NC0yOC43LTY0LTY0czI4LjctNjQgNjQtNjQgNjQgMjguNyA2NCA2NC0yOC43IDY0LTY0IDY0eiIvPjwvc3ZnPg==" alt="Logo">
-                <span>IE N° 70541 "Virgen de Fátima"</span>
+                <span>Institucion Nacional"</span>
             </div>
             <p class="footer-description">
                 Sistema de Registro de Notas - Gestión académica eficiente para docentes
@@ -71,7 +71,7 @@
     
     <div class="footer-bottom">
         <div class="footer-bottom-content">
-            <p>&copy; 2025 Institución Educativa N° 70541 "Virgen de Fátima". Todos los derechos reservados.</p>
+            <p>&copy; 2025 Institución Nacional. Todos los derechos reservados.</p>
             <div class="footer-bottom-links">
                 <a href="#">Privacidad</a>
                 <a href="#">Términos</a>

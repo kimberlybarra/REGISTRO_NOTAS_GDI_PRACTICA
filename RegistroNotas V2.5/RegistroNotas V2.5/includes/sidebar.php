@@ -22,7 +22,7 @@
             <li>
             <a href="reportes_completos.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'reportes_completos.php' ? 'active' : ''; ?>">
                 <i class="fas fa-file-alt"></i>
-                <span>Reporte Completo</span>
+                <span>Registrar Notas de Examen</span>
             </a>
         </li>
 

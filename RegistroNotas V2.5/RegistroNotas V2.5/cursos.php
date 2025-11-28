@@ -118,7 +118,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos - IE Virgen de Fátima</title>
+    <title>Cursos - Institución Nacional</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -354,8 +354,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="form-group">
                     <label for="peso_examen">Peso en el Promedio (%):</label>
                     <input type="number" id="peso_examen" name="peso_examen" required 
-                           min="10" max="50" step="5" value="30">
-                    <small class="form-help">Porcentaje que representa en el promedio final (10-50%)</small>
+                        min="10" max="50" step="0.01" value="30.00">
+                    <small class="form-help">Porcentaje que representa en el promedio final (10-50%) - Ej: 30.00</small>
                 </div>
                 
                 <div class="form-info">
@@ -430,7 +430,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Limpiar y resetear el formulario
                 document.getElementById('examForm').reset();
                 document.getElementById('fecha_examen').valueAsDate = new Date();
-                document.getElementById('peso_examen').value = '30';
+                document.getElementById('peso_examen').value = '30.00'; // CAMBIO AQUÍ
                 
                 examModal.style.display = 'block';
             });

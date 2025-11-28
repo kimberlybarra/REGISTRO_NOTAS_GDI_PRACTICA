@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2025 a las 20:53:32
+-- Tiempo de generación: 27-11-2025 a las 04:32:15
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -94,12 +94,12 @@ CREATE TABLE `curso` (
 --
 
 INSERT INTO `curso` (`codigo_curso`, `nombre`, `DNIdocente`) VALUES
-(1001, 'MATEMÁTICA', '45678912'),
-(1002, 'COMUNICACIÓN', '45678912'),
-(1003, 'CIENCIA Y TECNOLOGÍA', '45678912'),
-(1004, 'PERSONAL SOCIAL', '45678912'),
-(1005, 'EDUCACIÓN RELIGIOSA', '45678912'),
-(1006, 'ARTE Y CULTURA', '45678912');
+(1001, 'MATEMÁTICA', 'demo'),
+(1002, 'COMUNICACIÓN', 'demo'),
+(1003, 'CIENCIA Y TECNOLOGÍA', 'demo'),
+(1004, 'PERSONAL SOCIAL', 'demo'),
+(1005, 'EDUCACIÓN RELIGIOSA', 'demo'),
+(1006, 'ARTE Y CULTURA', 'demo');
 
 -- --------------------------------------------------------
 
@@ -120,7 +120,8 @@ CREATE TABLE `docente` (
 --
 
 INSERT INTO `docente` (`DNIdocente`, `nombres`, `apellidos`, `correo`, `contrasena`) VALUES
-('45678912', 'Livia Zelio', 'Ponce', 'livia.ponce@ie606.edu.pe', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+('45678912', 'Livia Zelio', 'Ponce', 'livia.ponce@ie606.edu.pe', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+('demo', 'Usuario', 'Demo', 'demo@demo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
 
 -- --------------------------------------------------------
 
@@ -140,26 +141,26 @@ CREATE TABLE `estudiante` (
 --
 
 INSERT INTO `estudiante` (`DNIestudiante`, `nombres`, `apellidos`, `id_grado_seccion`) VALUES
-('29032045', 'Leonardo', 'Challco Suni', 1),
-('29271304', 'Ariane Brigitte', 'Chany Vargas', 1),
-('29297151', 'Michelle Camila', 'Livisi Ccari', 1),
-('29341382', 'Mileth Maricrist Keisha', 'Jove Chipana', 1),
-('29447469', 'Ruth Kamila', 'Arana Quispe', 1),
-('29530668', 'Helen Melissa', 'Canahuiere Gómez', 1),
-('29591002', 'Mileydy Aime', 'Luque Idme', 1),
-('29606969', 'Roys Giovanny', 'Hancco Ccuno', 1),
-('29950812', 'Jhosimar Albert', 'Mamani Mamani', 1),
-('30191114', 'Luiz Gustavo', 'Canaza Quispe', 1),
-('30342696', 'Ximena Neyruth', 'Arapa Quispe', 1),
-('30419565', 'David Miguel', 'Benito Soto', 1),
-('30472809', 'Gabriel Raúl', 'Apaza Ramos', 1),
-('30499695', 'Dafne Melany', 'Choquemaqui Santamaría', 1),
-('30500956', 'Daylin Luana Dalai', 'Hancco Valero', 1),
-('30766614', 'Fátima Valeria', 'Condori Montalvo', 1),
-('30772679', 'Franco Abel', 'Condori Mamani', 1),
-('30832267', 'Aleyda Jennifer', 'Canaza Zúñiga', 1),
-('32246360', 'Jahzeel Duván', 'Ccañihua Ccolque', 1),
-('32272381', 'Taylor Jadiel Félix', 'Calla Machaca', 1);
+('29032045', 'Mateo Andrés', 'Rivera Salazar', 1),
+('29271304', 'Valeria Sofía', 'Torres Álvarez', 1),
+('29297151', 'Lucas Gabriel', 'Mendoza Ríos', 1),
+('29341382', 'Isabella Renata', 'Paredes Ñahui', 1),
+('29447469', 'Thiago Emanuel', 'Soria Camargo', 1),
+('29530668', 'Camila Briana', 'Valdivia Nuñez', 1),
+('29591002', 'Dylan Rodrigo', 'Castañeda Flores', 1),
+('29606969', 'Antonella Zoe', 'Beltrán Coaguila', 1),
+('29950812', 'Ian Marcelo', 'Valero Tumi', 1),
+('30191114', 'Mía Rafaela', 'Carrillo Tapia', 1),
+('30342696', 'Adriana Celeste', 'Guizado Choque', 1),
+('30419565', 'Álvaro Joaquín', 'Sarmiento Pinto', 1),
+('30472809', 'Naomi Elizabeth', 'Gallegos Yupanqui', 1),
+('30499695', 'Emilio Fernando', 'Huaranca Soto', 1),
+('30500956', 'Valery Romina', 'Castillo Berríos', 1),
+('30766614', 'Samuel Joaquín', 'Linares Puma', 1),
+('30772679', 'Sofía Luciana', 'Catacora Huamán', 1),
+('30832267', 'Benjamín Adrián', 'Silvestre Coila', 1),
+('32246360', 'Allison Roxana', 'Puma Pacori', 1),
+('32272381', 'Fabricio Aarón', 'Lipa Ramos', 1);
 
 -- --------------------------------------------------------
 
@@ -171,32 +172,6 @@ CREATE TABLE `evaluacion` (
   `DNIestudiante` varchar(8) NOT NULL,
   `codigo_listacot` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `evaluacion`
---
-
-INSERT INTO `evaluacion` (`DNIestudiante`, `codigo_listacot`) VALUES
-('29032045', 3001),
-('29271304', 3001),
-('29297151', 3001),
-('29341382', 3001),
-('29447469', 3001),
-('29530668', 3001),
-('29591002', 3001),
-('29606969', 3001),
-('29950812', 3001),
-('30191114', 3001),
-('30342696', 3001),
-('30419565', 3001),
-('30472809', 3001),
-('30499695', 3001),
-('30500956', 3001),
-('30766614', 3001),
-('30772679', 3001),
-('30832267', 3001),
-('32246360', 3001),
-('32272381', 3001);
 
 -- --------------------------------------------------------
 
@@ -212,6 +187,21 @@ CREATE TABLE `evaluacion_detalle` (
   `cumplido` tinyint(1) DEFAULT 0,
   `observaciones` text DEFAULT NULL,
   `fecha_evaluacion` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `examen`
+--
+
+CREATE TABLE `examen` (
+  `codigo_examen` int(6) NOT NULL,
+  `codigo_curso` int(6) DEFAULT NULL,
+  `tipo_examen` enum('BIMESTRAL','RECUPERACIÓN','SUSTITUTORIO') DEFAULT 'BIMESTRAL',
+  `fecha` date DEFAULT NULL,
+  `descripcion` varchar(200) DEFAULT NULL,
+  `peso` decimal(5,2) DEFAULT 0.30
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -269,6 +259,19 @@ CREATE TABLE `notas` (
   `codigo_sesion` int(6) NOT NULL,
   `observaciones` varchar(200) DEFAULT NULL,
   `nota_final` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notas_examen`
+--
+
+CREATE TABLE `notas_examen` (
+  `DNIestudiante` varchar(8) NOT NULL,
+  `codigo_examen` int(6) NOT NULL,
+  `nota_final` varchar(2) DEFAULT NULL,
+  `observaciones` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -386,6 +389,13 @@ ALTER TABLE `evaluacion_detalle`
   ADD KEY `id_criterio` (`id_criterio`);
 
 --
+-- Indices de la tabla `examen`
+--
+ALTER TABLE `examen`
+  ADD PRIMARY KEY (`codigo_examen`),
+  ADD KEY `codigo_curso` (`codigo_curso`);
+
+--
 -- Indices de la tabla `gradoseccion`
 --
 ALTER TABLE `gradoseccion`
@@ -405,6 +415,13 @@ ALTER TABLE `lista_de_cotejo`
 ALTER TABLE `notas`
   ADD PRIMARY KEY (`DNIestudiante`,`codigo_sesion`),
   ADD KEY `codigo_sesion` (`codigo_sesion`);
+
+--
+-- Indices de la tabla `notas_examen`
+--
+ALTER TABLE `notas_examen`
+  ADD PRIMARY KEY (`DNIestudiante`,`codigo_examen`),
+  ADD KEY `codigo_examen` (`codigo_examen`);
 
 --
 -- Indices de la tabla `password_resets`
@@ -504,6 +521,12 @@ ALTER TABLE `evaluacion_detalle`
   ADD CONSTRAINT `evaluacion_detalle_ibfk_3` FOREIGN KEY (`id_criterio`) REFERENCES `criterio` (`id_criterio`);
 
 --
+-- Filtros para la tabla `examen`
+--
+ALTER TABLE `examen`
+  ADD CONSTRAINT `examen_ibfk_1` FOREIGN KEY (`codigo_curso`) REFERENCES `curso` (`codigo_curso`);
+
+--
 -- Filtros para la tabla `lista_de_cotejo`
 --
 ALTER TABLE `lista_de_cotejo`
@@ -516,6 +539,13 @@ ALTER TABLE `lista_de_cotejo`
 ALTER TABLE `notas`
   ADD CONSTRAINT `notas_ibfk_1` FOREIGN KEY (`DNIestudiante`) REFERENCES `estudiante` (`DNIestudiante`),
   ADD CONSTRAINT `notas_ibfk_2` FOREIGN KEY (`codigo_sesion`) REFERENCES `sesion_de_aprendizaje` (`codigo_sesion`);
+
+--
+-- Filtros para la tabla `notas_examen`
+--
+ALTER TABLE `notas_examen`
+  ADD CONSTRAINT `notas_examen_ibfk_1` FOREIGN KEY (`DNIestudiante`) REFERENCES `estudiante` (`DNIestudiante`),
+  ADD CONSTRAINT `notas_examen_ibfk_2` FOREIGN KEY (`codigo_examen`) REFERENCES `examen` (`codigo_examen`);
 
 --
 -- Filtros para la tabla `sesion_de_aprendizaje`

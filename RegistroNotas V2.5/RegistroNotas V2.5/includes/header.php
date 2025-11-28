@@ -6,7 +6,7 @@
             </button>
             <div class="logocole">
                 <img src="img/logo.png" alt="Logo" class="logo">
-                <span>IE Virgen de Fátima</span>
+                <span>Institucion Nacional</span>
             </div>
 
         </div>

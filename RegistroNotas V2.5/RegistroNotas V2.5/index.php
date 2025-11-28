@@ -10,7 +10,7 @@ if(isset($_SESSION['docente_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IE N° 70541 "Virgen de Fátima" - Sistema de Registro de Notas</title>
+    <title>Institución Nacional - Sistema de Registro de Notas</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,8 +19,7 @@ if(isset($_SESSION['docente_id'])) {
     <div class="presentacion-container">
         <header class="presentacion-header">
         <div class="logo-container">
-            <img src="img/logo.png" alt="Logo Colegio Virgen de Fátima" class="logo">
-            <h1>IE N° 70541 "Virgen de Fátima"</h1>
+            <h1>Institución Nacional</h1>
         </div>
 
         </header>
@@ -56,7 +55,7 @@ if(isset($_SESSION['docente_id'])) {
         </main>
         
         <footer class="presentacion-footer">
-            <p>&copy; 2025 Institución Educativa N° 70541 "Virgen de Fátima". Todos los derechos reservados.</p>
+            <p>&copy; 2025 Institución Nacional. Todos los derechos reservados.</p>
         </footer>
     </div>
     
